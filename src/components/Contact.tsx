@@ -48,7 +48,7 @@ const Contact = () => {
                   </div>
                   <div>
                     <h4 className="text-hymid-dark font-medium">Phone</h4>
-                    <p className="text-hymid-gray">+44 (0) 1626 123456</p>
+                    <p className="text-hymid-gray">+91 (0) 9876 543210</p>
                   </div>
                 </div>
                 
@@ -58,7 +58,7 @@ const Contact = () => {
                   </div>
                   <div>
                     <h4 className="text-hymid-dark font-medium">Email</h4>
-                    <p className="text-hymid-gray">info@hymid.co.uk</p>
+                    <p className="text-hymid-gray">info@stc-plastics.com</p>
                   </div>
                 </div>
                 
@@ -69,9 +69,20 @@ const Contact = () => {
                   <div>
                     <h4 className="text-hymid-dark font-medium">Address</h4>
                     <p className="text-hymid-gray">
-                      Hymid Technical Mouldings<br />
-                      Devon, UK
+                      STC Plastic Manufacturing<br />
+                      Industrial Area, Phase II<br />
+                      New Delhi, India
                     </p>
+                  </div>
+                </div>
+              </div>
+              
+              <div className="mt-8 pt-8 border-t border-gray-200">
+                <h4 className="text-lg font-medium text-hymid-dark mb-4">Find us on map</h4>
+                <div className="h-64 bg-gray-200 rounded-md overflow-hidden">
+                  {/* Google Map would be embedded here */}
+                  <div className="w-full h-full flex items-center justify-center">
+                    <p className="text-hymid-gray">Google Map Embed</p>
                   </div>
                 </div>
               </div>
@@ -105,13 +116,28 @@ const Contact = () => {
                 </div>
                 
                 <div>
-                  <label htmlFor="subject" className="block text-hymid-dark font-medium mb-2">Subject</label>
+                  <label htmlFor="phone" className="block text-hymid-dark font-medium mb-2">Phone</label>
                   <input 
-                    type="text" 
-                    id="subject" 
+                    type="tel" 
+                    id="phone" 
                     className="w-full px-4 py-3 border border-gray-200 rounded-md focus:outline-none focus:ring-2 focus:ring-hymid-teal"
-                    placeholder="Subject"
+                    placeholder="Your phone number"
                   />
+                </div>
+                
+                <div>
+                  <label htmlFor="project" className="block text-hymid-dark font-medium mb-2">Project Type</label>
+                  <select 
+                    id="project" 
+                    className="w-full px-4 py-3 border border-gray-200 rounded-md focus:outline-none focus:ring-2 focus:ring-hymid-teal"
+                  >
+                    <option value="" disabled selected>Select project type</option>
+                    <option value="custom">Custom Product Development</option>
+                    <option value="mould">Mould Design & Manufacturing</option>
+                    <option value="production">Plastic Goods Production</option>
+                    <option value="prototyping">Prototyping & Testing</option>
+                    <option value="other">Other</option>
+                  </select>
                 </div>
                 
                 <div>
@@ -120,7 +146,7 @@ const Contact = () => {
                     id="message" 
                     rows={5}
                     className="w-full px-4 py-3 border border-gray-200 rounded-md focus:outline-none focus:ring-2 focus:ring-hymid-teal"
-                    placeholder="Your message"
+                    placeholder="Tell us about your project"
                   ></textarea>
                 </div>
                 

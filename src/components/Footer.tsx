@@ -9,9 +9,9 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* Company Info */}
           <div>
-            <h3 className="text-xl font-bold mb-6">Hymid</h3>
+            <h3 className="text-xl font-bold mb-6">STC</h3>
             <p className="text-gray-300 mb-6">
-              Leading plastic injection moulding specialists delivering innovative solutions for over 40 years.
+              Leading MSME plastic manufacturing company delivering precision solutions for diverse industries across India.
             </p>
             <div className="flex space-x-4">
               <a href="#" className="text-gray-300 hover:text-hymid-teal transition-colors">
@@ -43,7 +43,16 @@ const Footer = () => {
                 <a href="#services" className="text-gray-300 hover:text-hymid-teal transition-colors">Services</a>
               </li>
               <li>
-                <a href="#case-studies" className="text-gray-300 hover:text-hymid-teal transition-colors">Case Studies</a>
+                <a href="#industries" className="text-gray-300 hover:text-hymid-teal transition-colors">Industries</a>
+              </li>
+              <li>
+                <a href="#process" className="text-gray-300 hover:text-hymid-teal transition-colors">Our Process</a>
+              </li>
+              <li>
+                <a href="#sustainability" className="text-gray-300 hover:text-hymid-teal transition-colors">Sustainability</a>
+              </li>
+              <li>
+                <a href="#quality" className="text-gray-300 hover:text-hymid-teal transition-colors">Quality</a>
               </li>
               <li>
                 <a href="#contact" className="text-gray-300 hover:text-hymid-teal transition-colors">Contact</a>
@@ -56,19 +65,19 @@ const Footer = () => {
             <h3 className="text-xl font-bold mb-6">Services</h3>
             <ul className="space-y-3">
               <li>
-                <a href="#" className="text-gray-300 hover:text-hymid-teal transition-colors">Design & Development</a>
+                <a href="#" className="text-gray-300 hover:text-hymid-teal transition-colors">Custom Product Development</a>
               </li>
               <li>
-                <a href="#" className="text-gray-300 hover:text-hymid-teal transition-colors">Injection Moulding</a>
+                <a href="#" className="text-gray-300 hover:text-hymid-teal transition-colors">Mould Design & Manufacture</a>
               </li>
               <li>
-                <a href="#" className="text-gray-300 hover:text-hymid-teal transition-colors">Tool Manufacturing</a>
+                <a href="#" className="text-gray-300 hover:text-hymid-teal transition-colors">Plastic Goods Production</a>
               </li>
               <li>
-                <a href="#" className="text-gray-300 hover:text-hymid-teal transition-colors">Assembly & Finishing</a>
+                <a href="#" className="text-gray-300 hover:text-hymid-teal transition-colors">Prototyping & Testing</a>
               </li>
               <li>
-                <a href="#" className="text-gray-300 hover:text-hymid-teal transition-colors">Quality Control</a>
+                <a href="#" className="text-gray-300 hover:text-hymid-teal transition-colors">Quality Assurance</a>
               </li>
             </ul>
           </div>
@@ -79,15 +88,15 @@ const Footer = () => {
             <ul className="space-y-3">
               <li className="text-gray-300">
                 <span className="block font-medium">Address:</span>
-                Hymid Technical Mouldings, Devon, UK
+                STC Plastic Manufacturing, Industrial Area, Phase II, New Delhi, India
               </li>
               <li className="text-gray-300">
                 <span className="block font-medium">Phone:</span>
-                +44 (0) 1626 123456
+                +91 (0) 9876 543210
               </li>
               <li className="text-gray-300">
                 <span className="block font-medium">Email:</span>
-                info@hymid.co.uk
+                info@stc-plastics.com
               </li>
             </ul>
           </div>
@@ -98,7 +107,7 @@ const Footer = () => {
       <div className="border-t border-gray-700">
         <div className="hymid-container py-6 flex flex-col md:flex-row justify-between items-center">
           <p className="text-gray-400 text-sm mb-4 md:mb-0">
-            © {new Date().getFullYear()} Hymid Technical Mouldings. All rights reserved.
+            © {new Date().getFullYear()} STC Plastic Manufacturing. All rights reserved.
           </p>
           <div className="flex space-x-6">
             <a href="#" className="text-gray-400 hover:text-hymid-teal text-sm transition-colors">

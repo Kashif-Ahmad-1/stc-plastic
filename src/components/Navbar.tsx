@@ -33,23 +33,26 @@ const Navbar = () => {
         {/* Logo */}
         <div className="flex-shrink-0">
           <a href="#" className="flex items-center">
-            <span className="text-2xl font-bold text-hymid-teal">Hymid</span>
+            <span className={`text-2xl font-bold ${isScrolled ? 'text-hymid-teal' : 'text-white'}`}>STC</span>
           </a>
         </div>
         
         {/* Desktop Navigation */}
         <div className="hidden md:flex space-x-8">
-          <a href="#about" className="nav-link">About</a>
-          <a href="#services" className="nav-link">Services</a>
-          <a href="#case-studies" className="nav-link">Case Studies</a>
-          <a href="#contact" className="nav-link">Contact</a>
+          <a href="#about" className={`nav-link ${isScrolled ? 'text-hymid-dark' : 'text-white'}`}>About</a>
+          <a href="#services" className={`nav-link ${isScrolled ? 'text-hymid-dark' : 'text-white'}`}>Services</a>
+          <a href="#industries" className={`nav-link ${isScrolled ? 'text-hymid-dark' : 'text-white'}`}>Industries</a>
+          <a href="#process" className={`nav-link ${isScrolled ? 'text-hymid-dark' : 'text-white'}`}>Process</a>
+          <a href="#sustainability" className={`nav-link ${isScrolled ? 'text-hymid-dark' : 'text-white'}`}>Sustainability</a>
+          <a href="#quality" className={`nav-link ${isScrolled ? 'text-hymid-dark' : 'text-white'}`}>Quality</a>
+          <a href="#contact" className={`nav-link ${isScrolled ? 'text-hymid-dark' : 'text-white'}`}>Contact</a>
         </div>
         
         {/* Mobile menu button */}
         <div className="md:hidden">
           <button 
             onClick={() => setIsOpen(!isOpen)} 
-            className="p-2 text-hymid-dark rounded-md hover:bg-gray-100 focus:outline-none"
+            className={`p-2 ${isScrolled ? 'text-hymid-dark' : 'text-white'} rounded-md hover:bg-gray-100 hover:bg-opacity-20 focus:outline-none`}
           >
             {isOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
@@ -75,11 +78,32 @@ const Navbar = () => {
               Services
             </a>
             <a 
-              href="#case-studies" 
+              href="#industries" 
               className="block nav-link" 
               onClick={() => setIsOpen(false)}
             >
-              Case Studies
+              Industries
+            </a>
+            <a 
+              href="#process" 
+              className="block nav-link" 
+              onClick={() => setIsOpen(false)}
+            >
+              Process
+            </a>
+            <a 
+              href="#sustainability" 
+              className="block nav-link" 
+              onClick={() => setIsOpen(false)}
+            >
+              Sustainability
+            </a>
+            <a 
+              href="#quality" 
+              className="block nav-link" 
+              onClick={() => setIsOpen(false)}
+            >
+              Quality
             </a>
             <a 
               href="#contact" 

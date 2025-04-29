@@ -1,9 +1,8 @@
 
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect } from 'react';
+import { Award, Lightbulb, Users } from 'lucide-react';
 
 const About = () => {
-  const sectionRef = useRef<HTMLDivElement>(null);
-  
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
@@ -26,29 +25,32 @@ const About = () => {
   }, []);
 
   return (
-    <section id="about" className="section-padding bg-white" ref={sectionRef}>
+    <section id="about" className="section-padding bg-white">
       <div className="hymid-container">
+        <div className="text-center mb-16">
+          <h2 className="text-3xl md:text-4xl font-bold text-hymid-dark mb-4">
+            About <span className="text-hymid-teal">STC</span>
+          </h2>
+        </div>
+        
         <div className="flex flex-col md:flex-row items-center gap-16">
           <div className="w-full md:w-1/2">
             <div className="relative">
               <div className="reveal-on-scroll bg-hymid-light p-8 rounded-lg shadow-lg">
-                <h2 className="text-3xl font-bold text-hymid-dark mb-6">
-                  About <span className="text-hymid-teal">Hymid</span>
-                </h2>
-                <p className="text-hymid-gray mb-4">
-                  At Hymid, we've been at the forefront of plastic injection moulding and product development for over 40 years, combining technical excellence with creative design thinking to deliver innovative solutions for our clients.
+                <p className="text-hymid-gray mb-6">
+                  STC is a leading MSME manufacturing enterprise focused on delivering precision plastic solutions for diverse industries. We combine technical excellence with innovative design thinking to create high-quality products that meet our clients' exact specifications.
                 </p>
                 <p className="text-hymid-gray mb-6">
-                  Our experienced team of engineers, designers, and production specialists work collaboratively to transform concepts into high-quality products efficiently and cost-effectively.
+                  Our values of quality, innovation, and customer satisfaction drive everything we do, from conceptualization to final production and delivery.
                 </p>
                 <div className="grid grid-cols-2 gap-4">
                   <div className="flex items-center">
                     <div className="w-2 h-2 bg-hymid-teal rounded-full mr-2"></div>
-                    <span className="text-hymid-dark">40+ Years Experience</span>
+                    <span className="text-hymid-dark">MSME Certified</span>
                   </div>
                   <div className="flex items-center">
                     <div className="w-2 h-2 bg-hymid-teal rounded-full mr-2"></div>
-                    <span className="text-hymid-dark">UK Manufacturing</span>
+                    <span className="text-hymid-dark">ISO Compliant</span>
                   </div>
                   <div className="flex items-center">
                     <div className="w-2 h-2 bg-hymid-teal rounded-full mr-2"></div>
@@ -56,7 +58,7 @@ const About = () => {
                   </div>
                   <div className="flex items-center">
                     <div className="w-2 h-2 bg-hymid-teal rounded-full mr-2"></div>
-                    <span className="text-hymid-dark">Innovation Leaders</span>
+                    <span className="text-hymid-dark">Sustainable Practices</span>
                   </div>
                 </div>
               </div>
@@ -65,44 +67,34 @@ const About = () => {
           </div>
           
           <div className="w-full md:w-1/2">
-            <div className="reveal-on-scroll delay-300 grid grid-cols-2 gap-6">
-              <div className="bg-hymid-light p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow">
-                <div className="w-12 h-12 bg-hymid-teal rounded-full flex items-center justify-center mb-4">
-                  <span className="text-white text-xl font-bold">1</span>
+            <div className="reveal-on-scroll grid grid-cols-1 md:grid-cols-3 gap-6">
+              <div className="bg-hymid-light p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow text-center">
+                <div className="mx-auto mb-4 w-12 h-12 bg-hymid-teal/10 rounded-full flex items-center justify-center text-hymid-teal">
+                  <Award size={24} />
                 </div>
-                <h3 className="text-lg font-semibold text-hymid-dark mb-2">Quality First</h3>
+                <h3 className="text-lg font-semibold text-hymid-dark mb-2">Quality</h3>
                 <p className="text-hymid-gray text-sm">
-                  Our commitment to quality ensures your products meet the highest standards.
+                  Committed to excellence in every product we manufacture.
                 </p>
               </div>
               
-              <div className="bg-hymid-light p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow">
-                <div className="w-12 h-12 bg-hymid-teal rounded-full flex items-center justify-center mb-4">
-                  <span className="text-white text-xl font-bold">2</span>
+              <div className="bg-hymid-light p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow text-center">
+                <div className="mx-auto mb-4 w-12 h-12 bg-hymid-teal/10 rounded-full flex items-center justify-center text-hymid-teal">
+                  <Lightbulb size={24} />
                 </div>
                 <h3 className="text-lg font-semibold text-hymid-dark mb-2">Innovation</h3>
                 <p className="text-hymid-gray text-sm">
-                  We push the boundaries of what's possible with plastic manufacturing.
+                  Continuously pushing boundaries in plastic manufacturing.
                 </p>
               </div>
               
-              <div className="bg-hymid-light p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow">
-                <div className="w-12 h-12 bg-hymid-teal rounded-full flex items-center justify-center mb-4">
-                  <span className="text-white text-xl font-bold">3</span>
+              <div className="bg-hymid-light p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow text-center">
+                <div className="mx-auto mb-4 w-12 h-12 bg-hymid-teal/10 rounded-full flex items-center justify-center text-hymid-teal">
+                  <Users size={24} />
                 </div>
-                <h3 className="text-lg font-semibold text-hymid-dark mb-2">Sustainability</h3>
+                <h3 className="text-lg font-semibold text-hymid-dark mb-2">Partnership</h3>
                 <p className="text-hymid-gray text-sm">
-                  Environmental responsibility is built into our processes.
-                </p>
-              </div>
-              
-              <div className="bg-hymid-light p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow">
-                <div className="w-12 h-12 bg-hymid-teal rounded-full flex items-center justify-center mb-4">
-                  <span className="text-white text-xl font-bold">4</span>
-                </div>
-                <h3 className="text-lg font-semibold text-hymid-dark mb-2">Collaboration</h3>
-                <p className="text-hymid-gray text-sm">
-                  We work closely with our clients to understand and meet their needs.
+                  Building lasting relationships with our clients and partners.
                 </p>
               </div>
             </div>

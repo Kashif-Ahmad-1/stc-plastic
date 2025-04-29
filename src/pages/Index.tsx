@@ -4,7 +4,11 @@ import Navbar from '@/components/Navbar';
 import Hero from '@/components/Hero';
 import About from '@/components/About';
 import Services from '@/components/Services';
-import CaseStudies from '@/components/CaseStudies';
+import Industries from '@/components/Industries';
+import WhyChooseUs from '@/components/WhyChooseUs';
+import Process from '@/components/Process';
+import Sustainability from '@/components/Sustainability';
+import Quality from '@/components/Quality';
 import Contact from '@/components/Contact';
 import Footer from '@/components/Footer';
 import ScrollToTop from '@/components/ScrollToTop';
@@ -18,7 +22,11 @@ const Index = () => {
         <Hero />
         <About />
         <Services />
-        <CaseStudies />
+        <Industries />
+        <WhyChooseUs />
+        <Process />
+        <Sustainability />
+        <Quality />
         <Contact />
         <Footer />
         <ScrollToTop />

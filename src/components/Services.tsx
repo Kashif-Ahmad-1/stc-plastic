@@ -1,12 +1,12 @@
 
 import React, { useEffect } from 'react';
-import { ChevronRight } from 'lucide-react';
+import { ChevronRight, Wrench, Tool, Factory, TestTube } from 'lucide-react';
 
 // Service card component
 interface ServiceCardProps {
   title: string;
   description: string;
-  icon: string;
+  icon: React.ReactNode;
   index: number;
 }
 
@@ -17,10 +17,7 @@ const ServiceCard: React.FC<ServiceCardProps> = ({ title, description, icon, ind
       style={{ animationDelay: `${index * 100}ms` }}
     >
       <div className="mb-6 text-hymid-teal">
-        {icon === '1' && <div className="text-4xl font-bold">01</div>}
-        {icon === '2' && <div className="text-4xl font-bold">02</div>}
-        {icon === '3' && <div className="text-4xl font-bold">03</div>}
-        {icon === '4' && <div className="text-4xl font-bold">04</div>}
+        {icon}
       </div>
       <h3 className="text-xl font-semibold text-hymid-dark mb-3">{title}</h3>
       <p className="text-hymid-gray mb-6">{description}</p>
@@ -58,24 +55,24 @@ const Services = () => {
 
   const services = [
     {
-      title: "Design & Development",
+      title: "Custom Product Development",
       description: "From concept to reality, our design team works with you to create innovative plastic products that meet your specific requirements.",
-      icon: "1"
+      icon: <Wrench size={32} />
     },
     {
-      title: "Injection Moulding",
-      description: "Our state-of-the-art injection moulding process ensures high-quality, precise, and consistent plastic components.",
-      icon: "2"
-    },
-    {
-      title: "Tool Manufacturing",
+      title: "Mould Design & Manufacture",
       description: "We create custom tools and moulds designed for longevity and optimal production efficiency.",
-      icon: "3"
+      icon: <Tool size={32} />
     },
     {
-      title: "Assembly & Finishing",
-      description: "Our comprehensive finishing services include assembly, decoration, and quality control to deliver market-ready products.",
-      icon: "4"
+      title: "Plastic Goods Production",
+      description: "Our state-of-the-art injection moulding process ensures high-quality, precise, and consistent plastic components.",
+      icon: <Factory size={32} />
+    },
+    {
+      title: "Prototyping & Testing",
+      description: "Comprehensive prototyping and testing ensures your products meet all quality and performance standards before full production.",
+      icon: <TestTube size={32} />
     }
   ];
 
