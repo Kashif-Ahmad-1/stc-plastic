@@ -1,6 +1,6 @@
 
 import React, { useEffect } from 'react';
-import { ChevronRight, Wrench, Tool, Factory, TestTube } from 'lucide-react';
+import { ChevronRight, Wrench, Factory, TestTube } from 'lucide-react';
 
 // Service card component
 interface ServiceCardProps {
@@ -62,7 +62,7 @@ const Services = () => {
     {
       title: "Mould Design & Manufacture",
       description: "We create custom tools and moulds designed for longevity and optimal production efficiency.",
-      icon: <Tool size={32} />
+      icon: <Factory size={32} />
     },
     {
       title: "Plastic Goods Production",
