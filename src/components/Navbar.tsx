@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
-import { Menu, X } from 'lucide-react';
+import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
+import { Menu, X } from "lucide-react";
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -8,57 +8,67 @@ const Navbar = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY > 50) {
-        setIsScrolled(true);
-      } else {
-        setIsScrolled(false);
-      }
+      setIsScrolled(window.scrollY > 50);
     };
-
-    window.addEventListener('scroll', handleScroll);
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   return (
     <nav
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled
-          ? 'bg-[#1a1a1a] text-white py-3 shadow-md'
-          : 'bg-transparent text-white py-6'
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 backdrop-blur-md bg-opacity-70 ${
+        isScrolled ? "bg-gray-900 shadow-lg" : "bg-transparent"
       }`}
     >
-      <div className="hymid-container flex items-center justify-between">
+      <div className="hymid-container flex items-center justify-between py-4">
         {/* Logo */}
-        <div className="flex-shrink-0">
-          <Link to="/" className="flex items-center">
-            <span className={`text-2xl font-bold ${isScrolled ? 'text-hymid-teal' : 'text-white'}`}>STC</span>
+        <div className="flex items-center gap-2">
+          <Link
+            to="/"
+            className="text-3xl font-bold text-hymid-teal tracking-tight hover:scale-105 transition-transform duration-300"
+          >
+            STC
           </Link>
         </div>
 
         {/* Desktop Navigation */}
-        <div className="hidden md:flex space-x-8">
-          <Link to="/" className={`nav-link ${isScrolled ? 'text-hymid-dark' : 'text-white'}`}>Home</Link>
-          <Link to="/about-us" className={`nav-link ${isScrolled ? 'text-hymid-dark' : 'text-white'}`}>About Us</Link>
-          <Link to="/services" className={`nav-link ${isScrolled ? 'text-hymid-dark' : 'text-white'}`}>Services</Link>
-          <Link to="/products" className={`nav-link ${isScrolled ? 'text-hymid-dark' : 'text-white'}`}>Products</Link>
-          <Link to="/blogs" className={`nav-link ${isScrolled ? 'text-hymid-dark' : 'text-white'}`}>Blogs</Link>
-          <Link to="/contactUs" className={`nav-link ${isScrolled ? 'text-hymid-dark' : 'text-white'}`}>Contacts</Link>
-          <a href="/#industries" className={`nav-link ${isScrolled ? 'text-hymid-dark' : 'text-white'}`}>Industries</a>
-          <a href="/#process" className={`nav-link ${isScrolled ? 'text-hymid-dark' : 'text-white'}`}>Process</a>
-          <a href="/#sustainability" className={`nav-link ${isScrolled ? 'text-hymid-dark' : 'text-white'}`}>Sustainability</a>
-          <a href="/#quality" className={`nav-link ${isScrolled ? 'text-hymid-dark' : 'text-white'}`}>Quality</a>
-          <a href="/#contact" className={`nav-link ${isScrolled ? 'text-hymid-dark' : 'text-white'}`}>Contact</a>
+        <div className="hidden md:flex gap-6">
+          {[
+            ["/", "Home"],
+            ["/about-us", "About Us"],
+            ["/services", "Services"],
+            ["/products", "Products"],
+            ["/blogs", "Blogs"],
+          ].map(([path, label]) => (
+            <Link
+              key={path}
+              to={path}
+              className="text-gray-300 hover:text-white transition-colors"
+            >
+              {label}
+            </Link>
+          ))}
+          {[
+            ["/#industries", "Industries"],
+            ["/#sustainability", "Sustainability"],
+            ["/#quality", "Quality"],
+            ["/#contact", "Contact"],
+          ].map(([path, label]) => (
+            <a
+              key={path}
+              href={path}
+              className="text-gray-300 hover:text-white transition-colors"
+            >
+              {label}
+            </a>
+          ))}
         </div>
 
-        {/* Mobile menu button */}
+        {/* Mobile menu toggle */}
         <div className="md:hidden">
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className={`p-2 ${
-              isScrolled ? 'text-hymid-light' : 'text-white'
-            } rounded-md hover:bg-gray-100 hover:bg-opacity-20 focus:outline-none`}
+            className="text-white p-2 rounded-md hover:bg-gray-700 hover:bg-opacity-30"
           >
             {isOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
@@ -67,35 +77,31 @@ const Navbar = () => {
 
       {/* Mobile Navigation */}
       {isOpen && (
-        <div className="md:hidden bg-[#1a1a1a]">
-          <div className="px-6 py-4 space-y-4">
-            <Link to="/" className="block nav-link" onClick={() => setIsOpen(false)}>
-              Home
-            </Link>
-            <Link to="/about-us" className="block nav-link" onClick={() => setIsOpen(false)}>
-              About Us
-            </Link>
-            <Link to="/services" className="block nav-link" onClick={() => setIsOpen(false)}>
-              Services
-            </Link>
-            <Link to="/products" className="block nav-link" onClick={() => setIsOpen(false)}>
-              Products
-            </Link>
-            <a href="/#industries" className="block nav-link" onClick={() => setIsOpen(false)}>
-              Industries
-            </a>
-            <a href="/#process" className="block nav-link" onClick={() => setIsOpen(false)}>
-              Process
-            </a>
-            <a href="/#sustainability" className="block nav-link" onClick={() => setIsOpen(false)}>
-              Sustainability
-            </a>
-            <a href="/#quality" className="block nav-link" onClick={() => setIsOpen(false)}>
-              Quality
-            </a>
-            <a href="/#contact" className="block nav-link" onClick={() => setIsOpen(false)}>
-              Contact
-            </a>
+        <div className="md:hidden bg-gray-900 shadow-md">
+          <div className="flex flex-col px-6 py-4 space-y-3 text-gray-300">
+            {[
+              ["/", "Home"],
+              ["/about-us", "About Us"],
+              ["/services", "Services"],
+              ["/products", "Products"],
+              ["/#industries", "Industries"],
+              ["/#process", "Process"],
+              ["/#sustainability", "Sustainability"],
+              ["/#quality", "Quality"],
+              ["/#contact", "Contact"],
+            ].map(([path, label]) => (
+              <Link
+                key={path}
+                to={
+                  path.startsWith("/") && !path.includes("#") ? path : undefined
+                }
+                href={path.includes("#") ? path : undefined}
+                onClick={() => setIsOpen(false)}
+                className="block hover:text-white transition-colors"
+              >
+                {label}
+              </Link>
+            ))}
           </div>
         </div>
       )}
